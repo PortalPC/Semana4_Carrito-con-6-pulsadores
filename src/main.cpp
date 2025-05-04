@@ -4,8 +4,8 @@
 
 int main(void){
   DDRB |=0x0F;
-  DDRD &= ~0xFC
-  PORTD |= 0xFC
+  DDRD &= ~0xFC;
+  PORTD |=0xFC;
 
   while(1){
     if(!(PIND & (1<<PD2))){
@@ -20,4 +20,16 @@ int main(void){
     }else if(!(PIND & (1<<PD5))){
       PORTB = 0b00000110;
 
-    }else if 
+    }else if(!(PIND & (1<<PD6))){
+      PORTB = 0b00000001;
+
+    }else if(!(PIND &(1<<PD7))){
+      PORTB = 0x00;
+
+    }else{
+      PORTB = 0x00;
+    }
+    _delay_ms(50);
+  }
+}
+    
